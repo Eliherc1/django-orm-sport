@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>1.-Todos los equipos en la Atlantic Soccer Conference</h1>
+    <ol>
+        {% for a in Atlantic %}
+        <li>{{a.team_name}} - {{a.location}} - ({{a.league.name}})</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>2.-Todos los jugadores (actuales) en los Boston Penguins</h1>
+    <ol>
+        {% for b in Boston %}
+        <li>{{b.first_name}} {{b.last_name}} ({{b.curr_team.team_name}}) ({{b.curr_team.location}}) </li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>3.-Todos los jugadores (actuales) en la International Collegiate Baseball Conference</h1>
+    <ol>
+        {% for i in Inter %}
+        <li>{{i.first_name}} {{i.last_name}} ({{i.curr_team.league.name}}) ) </li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>4.-Todos los jugadores (actuales) en la Conferencia Americana de Fútbol Amateur con el apellido "López"</h1>
+    <ol>
+        {% for a in Amateur %}
+        <li>{{a.first_name}} {{a.last_name}} ({{a.curr_team.league.name}}) ) </li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>5.-Todos los jugadores de fútbol</h1>
+    <ol>
+        {% for f in Football %}
+            <li>{{f.first_name}} {{f.last_name}} </li>
+        {% empty %}
+        {% endfor %}
+    </ol> 
+    <hr size="2px" color="black" /> 
+    <h1>6.- Todos los equipos con un jugador (actual) llamado "Sophia"</h1>
+    <ol>
+        {% for s in Sophia %}
+        <li> {{s.team_name}}</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>7.- Todas las ligas con un jugador (actual) llamado "Sophia"</h1>
+    <ol>
+        {% for s in Sophia2 %}
+        <li> {{s.name}} ({{s.league}})</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>8.-Todos los jugadores con el apellido "Flores" que actualmente NO juegan para los Washington Roughriders</h1>
+    <ol>
+        {% for player in Flores %}
+        <li>{{player.first_name}} {{player.last_name}}    ---    ({{player.curr_team.location}} {{player.curr_team.team_name}} // {{player.curr_team.league.name}})</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>9.- Todos los equipos, pasados y presentes, con los que Samuel Evans ha jugado</h1>
+    <ol>
+        {% for s in Samuel %}
+        <li> {{s.team_name}}</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>10.-Todos los jugadores, pasados y presentes, con los gatos tigre de Manitoba</h1>
+    <ol>
+        {% for m in Manitoba %}
+        <li>{{m.first_name}} {{m.last_name}} ({{m.curr_team.team_name}}) </li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>11.-Todos los jugadores que anteriormente estaban (pero que no lo están) con los Wichita Vikings</h1>
+    <ol>
+        {% for v in Vikings %}
+        <li>{{v.first_name}} {{v.last_name}} (Equipo Actual: {{v.curr_team.team_name}}) </li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>12.- Cada equipo para el que Jacob Gray jugó antes de unirse a los Oregon Colts</h1>
+    <ol>
+        {% for j in Jacob %}
+        <li> {{j.team_name}}</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>13.- Todos llamados "Joshua" que alguna vez han jugado en la Federación Atlántica de Jugadores de Béisbol Amateur</h1>
+    <ol>
+        {% for j in Joshua %}
+        <li>{{j.first_name}} {{j.last_name}} </li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>14.- Todos los equipos que han tenido 12 o más jugadores, pasados y presentes.</h1>
+    <ol>
+        {% for d in Doce %}
+        <li> {{d.team_name}}</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+    <h1>15.- Todos los jugadores y el número de equipos para los que jugó, ordenados por la cantidad de equipos para los que han jugado</h1>
+    <ol>
+        {% for u in Ultimo %}
+        <li>{{u.first_name}} {{u.last_name}} (Cantidad de equipos: {{u.eqp}})</li>
+        {% empty %}
+        {% endfor %}
+    </ol>
+    <hr size="2px" color="black" />
+</body>
+
+</html>
